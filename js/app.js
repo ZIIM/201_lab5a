@@ -73,12 +73,17 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  let sumResult = 0;
+  for (let i = 0; i < sumArr.length; i++){
+    sumResult = sum(sumResult,sumArr[i]);
+  }
+  const sumString = `${sumArr.join(',')} was passed in as an array of numbers, and ${sumResult} is their sum.`; // used chatgpt
+  return [sumResult, sumString];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -94,11 +99,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    let productResult = 1;
+    for (let i = 0; i < multArr.length; i++){
+        productResult = multiply(productResult,multArr[i]);
+    }
 
+    const productString = `The numbers ${multArr.join(',')} have a product of ${productResult}.`; // used chatGPT
+
+    return [productResult, productString];
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -121,11 +134,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+function multiplyAnyArray(dynamicArray) {
+    let productResult = i ;
+    for (let i = 0, i < dynamicArray.length; i++){
+        productResult = multiply(productResult, dynamicArray[i]);
+    }
+    const productString = `The numbers ${dynamicArray.join(',')} have a product of ${productResult}.`; // used chatGPT
 
+    return [productResult, productString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
